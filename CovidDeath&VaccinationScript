@@ -1,0 +1,13 @@
+SELECT *
+FROM covidDeath 
+order by 3, 4
+
+
+--SELECT *
+--FROM covidVaccination 
+--order by 3, 4
+
+
+SELECT *
+FROM covidDeath 
+order by 1, 2
