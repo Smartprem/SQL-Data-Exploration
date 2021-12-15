@@ -1,13 +1,17 @@
-SELECT *
+
+/*SELECT location, date, total_cases,  new_cases, total_deaths, population
 FROM covidDeath 
-order by 3, 4
+order by 1*/
 
-
---SELECT *
---FROM covidVaccination 
---order by 3, 4
-
-
-SELECT location, date, total_cases,  new_cases, total_deaths, population
-FROM covidDeath 
-order by 1, 2
+-- Total cases vs total death
+-- Probability of dying if you contact covid in Nigeria
+SELECT
+	location,
+	date,
+	total_cases,
+	total_deaths,
+	(total_deaths / total_cases) * 100 as death_percentage
+FROM
+	covidDeath
+WHERE  location like 'Nigeria'
+order by 1
